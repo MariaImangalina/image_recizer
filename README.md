@@ -18,9 +18,9 @@
 
 1) Создайте новое окружение: `python3 -m venv venv`
 
-2) Активируйте его: `venv/Scripts/activate`
+2) Активируйте его: `venv\Scripts\activate`
 
-3) Cоздайте новую папку и клонируйте в нее репозиторий: `git clone https://github.com/MariaImangalina/image_resizer.git`
+3) Cоздайте новую папку и клонируйте в нее репозиторий: `git clone https://github.com/MariaImangalina/image_recizer.git`
 
 4) Установите зависимости: `pip install -r requirements.txt`
 
