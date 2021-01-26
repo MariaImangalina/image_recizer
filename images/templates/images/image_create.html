@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p><a href="{% url 'images:list' %}">Назад к списку</a></p>
+
+
+<h1>Новое изображение</h1>
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        {{ message }}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+<form method='POST' enctype="multipart/form-data">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+
+<input type='submit' value='Отправить'>
+
+</form>
+
+
+{% endblock %}

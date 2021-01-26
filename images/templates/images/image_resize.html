@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p><a href="{% url 'images:list' %}">Назад к списку</a></p>
+
+<h1>{{ image.name }}</h1>
+
+<p>Вы можете задать ширину, высоту или оба значения.<br>Если заданные значения будут нарушать пропорции изображения, расчет будет сделан на основе большей стороны.</p>
+
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" value='Отправить'>
+
+</form>
+
+<br><br>
+
+<img src="{{ image.img.url }}" alt="изображение">
+
+<h3>Текущий размер изображения:</h3>
+
+<p>Ширина: {{ image.img.width }}</p>
+<p>Высота: {{ image.img.height }}</p>
+
+
+{% endblock %}
